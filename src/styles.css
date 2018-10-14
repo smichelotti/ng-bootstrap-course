@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    padding-top: 92px;
+    height: 100%;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.applicationHost {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by its height */
+    margin: 0 auto -60px;
+    /* Pad bottom by footer height */
+    padding: 0 0 90px;
+  }
