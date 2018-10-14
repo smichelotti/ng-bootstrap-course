@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
 import { EntryEditorComponent } from './entry-editor/entry-editor.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { HttpClientModule } from '@angular/common/http';
+import { WorkoutsApiService } from './services/workouts-api.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,12 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    WorkoutsApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
