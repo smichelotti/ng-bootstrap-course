@@ -1,3 +1,43 @@
-<p>
-  entry-editor works!
-</p>
+<div class="container">
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+
+  <div class="card">
+    <h3 class="card-header">Entry</h3>
+    <div class="card-body">
+      <form>
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2">Type:</label>
+          <div class="col-sm-6">
+            <select class="form-control" name="wtype" [(ngModel)]="workout.type">
+              <option value="">(Select)</option>
+              <option value="bike">Bike</option>
+              <option value="run">Run</option>
+              <option value="row">Row</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2">Date:</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" name="wdate" [(ngModel)]="workout.date" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2">Distance:</label>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" name="wdistance" [(ngModel)]="workout.distance" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-4 mt-sm-3">
+            <button class="btn btn-primary mr-sm-2" (click)="save()">Save</button>
+            <a class="btn btn-secondary" [routerLink]="['/workouts']">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

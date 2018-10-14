@@ -1,3 +1,48 @@
-<p>
-  workouts works!
-</p>
+<div>
+  <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">Workouts</h4>
+    </div>
+    <div class="card-body">
+      <button class="btn btn-sm btn-primary">Set Performance Targets</button>
+
+      <!-- TODO: Progress bar here -->
+
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="card-header">
+      Workout Entries
+      <a [routerLink]="['/workouts', 'new']" class="btn btn-sm btn-primary float-right">Add New Entry</a>
+    </h3>
+    <div class="card-body">
+
+      <table class="table table-striped">
+        <thead>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Distance</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of workouts">
+            <td>{{entry.date}}</td>
+            <td>{{entry.type}}</td>
+            <td>{{entry.distance}}</td>
+            <td>
+              <a [routerLink]="['/workouts', entry.id]" class="btn btn-info btn-sm mr-2">Edit</a>
+              <button class="btn btn-danger btn-sm" (click)="deleteWorkout(entry.id)">Delete</button>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+</div>
