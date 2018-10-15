@@ -36,8 +36,19 @@
         <div class="form-group row">
           <label class="col-form-label col-sm-2">Time:</label>
           <div class="col-sm-3">
-            <ngb-timepicker name="tp" [(ngModel)]="workout.time" [meridian]="true"
-                [seconds]="false" [spinners]="true" [minuteStep]="15"></ngb-timepicker>
+            <ngb-timepicker name="tp" [(ngModel)]="workout.time" [meridian]="true" [seconds]="false" [spinners]="true"
+              [minuteStep]="15"></ngb-timepicker>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-form-label col-sm-2">Quality:</label>
+          <div class="col-sm-3 mt-sm-2">
+            <ngb-rating [(rate)]="workout.rating" [readonly]="false" max="5">
+              <ng-template let-fill="fill" let-index="index">
+                <span class="star" [class.filled]="fill === 100" [class.bad]="index < 2">&#9733;</span>
+              </ng-template>
+            </ngb-rating>
           </div>
         </div>
 
