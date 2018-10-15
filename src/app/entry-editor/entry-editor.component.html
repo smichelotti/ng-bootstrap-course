@@ -19,7 +19,17 @@
         <div class="form-group row">
           <label class="col-form-label col-sm-2">Date:</label>
           <div class="col-sm-3">
-            <input type="text" class="form-control" name="wdate" [(ngModel)]="workout.date" />
+            <!-- <input type="text" class="form-control" name="wdate" [(ngModel)]="workout.date" /> -->
+            <!-- <ngb-datepicker #d name="wdate" [(ngModel)]="workout.date" 
+                [startDate]="startDate" [maxDate]="maxDate"></ngb-datepicker> -->
+
+            <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd" name="wdate" [(ngModel)]="workout.date" [maxDate]="maxDate"
+                ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-info calendar" (click)="d.toggle()" type="button"></button>
+              </div>
+            </div>
           </div>
         </div>
 
