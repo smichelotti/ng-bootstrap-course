@@ -1,9 +1,40 @@
 <div>
   <div class="jumbotron">
-      <h1 class="display-3">Workout Tracker</h1>
-      <hr class="my-4" />
-      <p>
-        Welcome to Workout Tracker!
-      </p>
-    </div>
+    <h1 class="display-3">Workout Tracker</h1>
+    <hr class="my-4" />
+    <p>
+      Welcome to Workout Tracker!
+    </p>
+  </div>
+
+  <ngb-accordion type="success" closeOthers="true" activeIds="panel1" #acc="ngbAccordion"
+      (panelChange)="beforeChange($event)">
+
+    <ngb-panel id="panel1">
+      <ng-template ngbPanelTitle>
+        <p class="font-weight-bold">Welcome</p>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        <p>Welcome to Workout Tracker!</p>
+        <p class="float-right">
+          <button class="btn btn-info" (click)="nextButton(1)">Next</button>
+        </p>
+      </ng-template>
+    </ngb-panel>
+
+    <ngb-panel title="How To" id="panel2">
+      <ng-template ngbPanelContent>
+        <p>Click on Workouts in the menu to start tracking your progress.</p>
+        <p class="float-right">
+          <button class="btn btn-info" (click)="nextButton(2)">Next</button>
+        </p>
+      </ng-template>
+    </ngb-panel>
+
+    <ngb-panel title="Enjoy!" id="panel3">
+      <ng-template ngbPanelContent>
+        <p>We hope you enjoy Workout Tracker!</p>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
 </div>
