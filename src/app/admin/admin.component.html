@@ -1,0 +1,16 @@
+<ngb-tabset justify="justified" orientation="horizontal" #ts="ngbTabset" (tabChange)="beforeChange($event)">
+  <ngb-tab title="Locations" id="tabLocations">
+    <ng-template ngbTabContent>Locations Tab</ng-template>
+  </ngb-tab>
+  <ngb-tab id="tabImages">
+    <ng-template ngbTabTitle>
+      <span class="text-success">Home Images</span>
+    </ng-template>
+    <ng-template ngbTabContent>Images Tab</ng-template>
+  </ngb-tab>
+  <ngb-tab title="User Management" [disabled]="false" id="tabUsers">
+    <ng-template ngbTabContent>User Management Tab</ng-template>
+  </ngb-tab>
+</ngb-tabset>
+
+<button class="btn btn-primary mbt-sm-3" (click)="ts.select('tabImages')">Go To Images</button>

@@ -17,6 +17,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { WorkoutsApiService } from './services/workouts-api.service';
 import { DateStringAdapterService } from './services/date-string-adapter.service';
 import { PerformanceTargetsModalComponent } from './performance-targets-modal/performance-targets-modal.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PerformanceTargetsModalComponent } from './performance-targets-modal/pe
     WorkoutsComponent,
     EntryEditorComponent,
     NavMenuComponent,
-    PerformanceTargetsModalComponent
+    PerformanceTargetsModalComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
