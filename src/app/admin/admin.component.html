@@ -2,15 +2,39 @@
   <ngb-tab title="Locations" id="tabLocations">
     <ng-template ngbTabContent>Locations Tab</ng-template>
   </ngb-tab>
+
   <ngb-tab id="tabImages">
     <ng-template ngbTabTitle>
       <span class="text-success">Home Images</span>
     </ng-template>
-    <ng-template ngbTabContent>Images Tab</ng-template>
+    <ng-template ngbTabContent>
+
+      <div class="row">
+        <div class="mainImageContainer">
+          <ngb-carousel [interval]="0" [pauseOnHover]="true" [showNavigationIndicators]="true"
+              [showNavigationArrows]="false" #imgCarousel>
+            <ng-template ngbSlide *ngFor="let img of images">
+              <img [src]="img.src">
+              <div class="carousel-caption">
+                <h3>{{img.title}}</h3>
+                <p>cool sub-title</p>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
+      </div>
+
+      <div class="row">
+        <button class="btn btn-primary mt-sm-2 mr-sm-2" (click)="prev()">Previous</button>
+        <button class="btn btn-primary mt-sm-2" (click)="next()">Next</button>
+      </div>
+
+    </ng-template>
   </ngb-tab>
+
   <ngb-tab title="User Management" [disabled]="false" id="tabUsers">
     <ng-template ngbTabContent>User Management Tab</ng-template>
   </ngb-tab>
 </ngb-tabset>
 
-<button class="btn btn-primary mbt-sm-3" (click)="ts.select('tabImages')">Go To Images</button>
+<!-- <button class="btn btn-primary mbt-sm-3" (click)="ts.select('tabImages')">Go To Images</button> -->
