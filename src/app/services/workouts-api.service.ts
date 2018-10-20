@@ -44,5 +44,13 @@ export class WorkoutsApiService {
   searchLocations(searchTerm) {
     return this.http.get<any[]>(`${this.baseUrl}/locations?q=${searchTerm}`);
   }
+
+  getPerfTargets() {
+    return this.http.get(`${this.baseUrl}/performanceTargets`);
+  }
+  
+  savePerfTargets(perfTargets: any){
+    return this.http.put(`${this.baseUrl}/performanceTargets`, perfTargets);
+  }
   
 }

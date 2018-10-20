@@ -16,6 +16,7 @@ import { EntryEditorComponent } from './entry-editor/entry-editor.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { WorkoutsApiService } from './services/workouts-api.service';
 import { DateStringAdapterService } from './services/date-string-adapter.service';
+import { PerformanceTargetsModalComponent } from './performance-targets-modal/performance-targets-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DateStringAdapterService } from './services/date-string-adapter.service
     HomeComponent,
     WorkoutsComponent,
     EntryEditorComponent,
-    NavMenuComponent
+    NavMenuComponent,
+    PerformanceTargetsModalComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,9 @@ import { DateStringAdapterService } from './services/date-string-adapter.service
   providers: [
     WorkoutsApiService,
     { provide: NgbDateAdapter, useClass: DateStringAdapterService } 
+  ],
+  entryComponents: [
+    PerformanceTargetsModalComponent
   ],
   bootstrap: [AppComponent]
 })

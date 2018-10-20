@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <h4 class="modal-title">Your Performance Targets</h4>
+</div>
+
+<div class="modal-body">
+  <form>
+    <div class="form-group">
+      <label>Row Target (meters):</label>
+      <input type="text" class="form-control" name="rowTarget" [(ngModel)]="perfTargets.row" />
+    </div>
+    <div class="form-group">
+      <label>Run Target (meters):</label>
+      <input type="text" class="form-control" name="runTarget" [(ngModel)]="perfTargets.run" />
+    </div>
+    <div class="form-group">
+      <label>Bike Target (meters):</label>
+      <input type="text" class="form-control" name="bikeTarget" [(ngModel)]="perfTargets.bike" />
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-primary" (click)="save()">Save</button>
+  <button class="btn btn-secondary" (click)="activeModal.dismiss()">Cancel</button>
+</div>
