@@ -18,7 +18,25 @@
         </div>
       </div>
 
-      <!-- TODO: Progress bar here -->
+      <hr />
+      <p>
+        <ngb-progressbar [value]="totals.bike" [max]="perfTargets.bike" height="20px" 
+            [type]="getPBType(totals.bike, perfTargets.bike)">
+          (Bike) {{totals.bike}} of {{perfTargets.bike}}
+        </ngb-progressbar>
+      </p>
+      <p>
+        <ngb-progressbar [value]="totals.row" [max]="perfTargets.row" height="20px"
+            [type]="getPBType(totals.row, perfTargets.row)">
+          (Row) {{totals.row}} of {{perfTargets.row}}
+        </ngb-progressbar>
+      </p>
+      <p>
+        <ngb-progressbar [value]="totals.run" [max]="perfTargets.run" height="20px"
+            [type]="getPBType(totals.run, perfTargets.run)">
+          (Run) {{totals.run}} of {{perfTargets.run}}
+        </ngb-progressbar>
+      </p>
 
     </div>
   </div>
@@ -26,8 +44,8 @@
   <div class="card">
     <h3 class="card-header">
       Workout Entries
-      <a [routerLink]="['/workouts', 'new']" class="btn btn-sm btn-primary float-right"
-        [ngbTooltip]="ttContent" placement="left" tooltipClass="custom-tooltip">Add New Entry</a>
+      <a [routerLink]="['/workouts', 'new']" class="btn btn-sm btn-primary float-right" [ngbTooltip]="ttContent"
+        placement="left" tooltipClass="custom-tooltip">Add New Entry</a>
       <ng-template #ttContent>
         Log a new <strong class="text-primary text-uppercase">workout</strong> into your list
       </ng-template>
@@ -75,6 +93,6 @@
       <button class="btn btn-danger" (click)="modal.dismiss()">No</button>
     </div>
   </ng-template>
- 
+
 
 </div>
