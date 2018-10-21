@@ -13,6 +13,17 @@
               <label ngbButtonLabel class="btn-primary"><input ngbButton type="radio" value="run">Run</label>
               <label ngbButtonLabel class="btn-primary"><input ngbButton type="radio" value="row">Row</label>
             </div>
+
+            <button class="btn btn-outline-info btn-sm ml-sm-2" [popoverTitle]="popTitle"
+                [ngbPopover]="popContent" placement="right" popoverClass="custom-popover"
+                triggers="mouseenter:mouseleave" #pop="ngbPopover"
+                (shown)="popVisibilityChanged(pop)" (hidden)="popVisibilityChanged(pop)">?</button>
+            <ng-template #popTitle>
+              <h4>Activity Type</h4>
+            </ng-template>
+            <ng-template #popContent>
+                These buttons specify the type of <strong class="text-primary text-uppercase">activity</strong>
+            </ng-template>
           </div>
         </div>
 
