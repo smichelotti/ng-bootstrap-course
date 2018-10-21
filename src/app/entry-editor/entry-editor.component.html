@@ -55,16 +55,28 @@
         <div class="form-group row">
           <label class="col-form-label col-sm-2">Distance:</label>
           <div class="col-sm-3">
-            <input type="text" class="form-control" name="wdistance" [(ngModel)]="workout.distance" />
+            <input type="text" class="form-control" name="wdistance" [(ngModel)]="workout.distance" 
+              required pattern="\d+" #wdistance="ngModel" />
           </div>
+        </div>
+
+        <div *ngIf="wdistance.invalid && (wdistance.dirty || wdistance.touched)">
+          <!-- <ngb-alert type="custom" [dismissible]="true" *ngIf="!isDismissible" (close)="isDismissible = !isDismissible">
+            Dismissible Alert
+          </ngb-alert> -->
+          <ngb-alert type="danger" *ngIf="wdistance.errors.required" [dismissible]="false">
+            <strong>Distance</strong> is required.
+          </ngb-alert>
+          <ngb-alert type="warning" *ngIf="wdistance.errors.pattern">
+            Distance must be a valid number.
+          </ngb-alert>
         </div>
 
         <div class="form-group row">
           <label class="col-form-label col-sm-2">Location:</label>
           <div class="col-sm-3">
-            <input type="text" class="form-control" name="wlocation" [(ngModel)]="workout.location" 
-                [ngbTypeahead]="locationsSearch" />
-                <!-- [resultFormatter]="locationsFormatter" [inputFormatter]="locationsFormatter" -->
+            <input type="text" class="form-control" name="wlocation" [(ngModel)]="workout.location" [ngbTypeahead]="locationsSearch" />
+            <!-- [resultFormatter]="locationsFormatter" [inputFormatter]="locationsFormatter" -->
           </div>
         </div>
 
