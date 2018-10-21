@@ -5,10 +5,23 @@
     <p>
       Welcome to Workout Tracker!
     </p>
+
+    <div class="btn-group">
+      <button class="btn btn-primary">Navigation</button>
+      <div class="btn-group" ngbDropdown>
+        <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+        <div ngbDropdownMenu>
+          <button class="dropdown-item">Home</button>
+          <button class="dropdown-item">Workouts</button>
+          <button class="dropdown-item">Admin</button>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 
-  <ngb-accordion type="success" closeOthers="true" activeIds="panel1" #acc="ngbAccordion"
-      (panelChange)="beforeChange($event)">
+  <ngb-accordion type="success" closeOthers="true" activeIds="panel1" #acc="ngbAccordion" (panelChange)="beforeChange($event)">
 
     <ngb-panel id="panel1">
       <ng-template ngbPanelTitle>
