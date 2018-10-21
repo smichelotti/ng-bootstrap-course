@@ -13,7 +13,7 @@ import { PerformanceTargetsModalComponent } from '../performance-targets-modal/p
 })
 export class WorkoutsComponent implements OnInit {
   public workouts = [];
-  public workoutsOrig = [];
+  //public workoutsOrig = [];
   public loading = false;
   public perfTargets = {};
   public totals = {};
@@ -24,11 +24,11 @@ export class WorkoutsComponent implements OnInit {
 
   ngOnInit() {
     forkJoin(
-      this.api.getWorkouts(),
+      this.api.getWorkoutsPaged(this.currPage, this.pageSize),
       this.api.getPerfTargets()
     ).subscribe(([workoutsResult, perfTargetsResult]) => {
-      this.workoutsOrig = workoutsResult;
-      this.refreshGrid();
+      this.workouts = workoutsResult;
+      //this.refreshGrid();
       this.perfTargets = perfTargetsResult;
       this.calculatePerformance();
       this.loading = false;
@@ -37,8 +37,10 @@ export class WorkoutsComponent implements OnInit {
   }
 
   refreshGrid() {
-    let offset = (this.currPage - 1) * this.pageSize;
-    this.workouts = _.drop(this.workoutsOrig, offset).slice(0, this.pageSize);
+    // let offset = (this.currPage - 1) * this.pageSize;
+    // this.workouts = _.drop(this.workoutsOrig, offset).slice(0, this.pageSize);
+
+    this.api.getWorkoutsPaged(this.currPage, this.pageSize).subscribe(data => this.workouts = data);
   }
 
   deleteWorkout(id, deleteModal) {

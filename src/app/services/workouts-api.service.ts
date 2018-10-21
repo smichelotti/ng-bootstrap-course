@@ -13,6 +13,10 @@ export class WorkoutsApiService {
     return this.http.get<any[]>(`${this.baseUrl}/workouts`);
   }
 
+  getWorkoutsPaged(currPage, pageSize) {
+    return this.http.get<any[]>(`${this.baseUrl}/workouts?_page=${currPage}&_limit=${pageSize}`);
+  }
+
   getWorkout(id) {
     return this.http.get<any>(`${this.baseUrl}/workouts/${id}`);
   }
