@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { WorkoutsApiService } from '../services/workouts-api.service';
 import * as _ from 'lodash';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
@@ -8,7 +8,8 @@ import { PerformanceTargetsModalComponent } from '../performance-targets-modal/p
 @Component({
   selector: 'app-workouts',
   templateUrl: './workouts.component.html',
-  styleUrls: ['./workouts.component.css']
+  styleUrls: ['./workouts.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class WorkoutsComponent implements OnInit {
   public workouts = [];
