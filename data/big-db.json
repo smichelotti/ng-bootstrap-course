@@ -305,5 +305,39 @@
       "type": "bike",
       "distance": 149
     }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Main gym"
+    },
+    {
+      "id": 2,
+      "name": "Home gym"
+    },
+    {
+      "id": 3,
+      "name": "Neighborhood 1 mile course"
+    },
+    {
+      "id": 4,
+      "name": "Neighborhood 3 mile course"
+    },
+    {
+      "id": 5,
+      "name": "Neighborhood 5 mile course"
+    },
+    {
+      "id": 6,
+      "name": "Smallville 20 mile course"
+    },
+    {
+      "id": 7,
+      "name": "Smallville 25 mile course"
+    },
+    {
+      "id": 8,
+      "name": "Smallville 30 mile course"
+    }
   ]
 }
